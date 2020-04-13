@@ -5,4 +5,7 @@ def fibonacci(n):
     else:
         fib[n]=fibonacci[n-1]+fibonacci[n-2]
         return fib[n]
-        
+while True:
+    n=int(input("Enter number:   ").split())
+    print(fibonacci(n))
+    
