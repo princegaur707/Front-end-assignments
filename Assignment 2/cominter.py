@@ -8,7 +8,7 @@
 #     t-> no. of times period elasped
     
 def compoundinterest(p,r,n,t):
-    return p*((n+r)/n)**(n*t)
+    return p*(1+(r/(100*n)))**(n*t)
 while True:
     p,r,n,t=map(float,input("Enter values of p,r,n,t:     ").split())
     print(compoundinterest(p,r,n,t))
