@@ -1,11 +1,20 @@
+#print fibonacci till number with memoization
+fib={}
 def fibonacci(n):
+    if n in fib:
+        return fib[n]
     if(n==0):
-        return(0)
-    elif(n==1):
-        return(1)
+        return 0
+    if(n==1):
+        return 1
     else:
-        return(fibonacci(n-1)+fibonacci(n-2))
-while(True):
-    n=int(input("\nEnter the number: "))
-    for i in range(n+1):
-        print(fibonacci(i), end=" ")
+        fib[n]= fibonacci(n-1)+fibonacci(n-2)
+        return fib[n]
+while True:
+    try:
+        n=int(input("\nEnter number:   "))
+        for i in range(n):
+            print(fibonacci(i),end=" ")
+    except:
+        print("Invalid input!")
+        break

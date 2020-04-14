@@ -1,11 +1,18 @@
-fib={(0,0),(1,1)}
-def fibonacci(n):
+#nth fibonacci with memoization
+fib={}
+def nthfibonacci(n):
     if n in fib:
         return fib[n]
-    else:
-        fib[n]=fibonacci[n-1]+fibonacci[n-2]
-        return fib[n]
+    if n==0:
+        return 0
+    if n==1:
+        return 1
+    fib[n]=nthfibonacci(n-1)+nthfibonacci(n-2)
+    return fib[n]
 while True:
-    n=int(input("Enter number:   ").split())
-    print(fibonacci(n))
-    
+    try:
+        n=int(input("Enter number:    "))
+        print(nthfibonacci(n-1))
+    except:
+        print("Invalid input!")
+        break
