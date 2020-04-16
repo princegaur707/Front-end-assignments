@@ -7,7 +7,7 @@ def chkprime(n):
     if n%2==0 or n%3==0:
         return False
     for i in range(5,ceil(sqrt(n)+1),6):
-        if n%i==o or n%(i+2)==0:
+        if n%i==0 or n%(i+2)==0:
             return False
     return True
 while True:
