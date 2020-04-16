@@ -1,4 +1,4 @@
 while True:
-    nums=input("Enter list of tuples:     ")
+    nums=list(map(tuple,input("Enter elements:    ").split()))
     print(type(nums))
     print(nums)
