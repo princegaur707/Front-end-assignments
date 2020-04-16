@@ -1,14 +1,15 @@
 from math import ceil, sqrt
-def genprimes(x,n):
-    primes=[True]*(n+1)
-    primes[0]=primes[1]=False
-    for p in range(2,ceil(sqrt(n))):
-        if primes[p]==True:
-            for i in range(p*p,n+1,p):
-                primes[i]=False
-    for i in range(x,n+1):
-        if primes[i]==True:
-            print(i,end=" ")
+def chkprime(n):
+    if n<=1:
+        return False
+    if n<=3:
+        return True
+    if n%2==0 or n%3==0:
+        return False
+    for i in range(5,ceil(sqrt(n)+1),6):
+        if n%i==o or n%(i+2)==0:
+            return False
+    return True
 while True:
-    x,n=map(int,input("\nEnter number:   ").split())
-    genprimes(x,n)
+    n=int(input("Enter number:    "))
+    print(chkprime(n))
