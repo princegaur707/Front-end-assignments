@@ -1,4 +1,7 @@
 while True:
-    nums=list(map(tuple,input("Enter elements:    ").split()))
-    print(type(nums))
+    nums=[]
+    n=int(input())
+    for i in range(n):
+        nums.append(input())
     print(nums)
+    print(type(nums[0]))
